@@ -13,15 +13,12 @@ jobs:
           go-version: 1.15
       - name: build custom analyzer
         run: |
-          curl -o linters.tar.gz -L https://github.com/sapphi-red/possibleerrors/releases/download/v0.1.14/possibleerrors_golang-ci-lint-plugin_0.1.14_linux_64bit.tar.gz
-          tar -xzf linters.tar.gz
-
           go get -u github.com/gostaticanalysis/vetgen
           vetgen init _vettool
           cd _vettool
-          vetgen add //github.com/sapphi-red/possibleerrors/fordirection
-          vetgen add //github.com/sapphi-red/possibleerrors/avoidaccesslen
-          vetgen add //github.com/sapphi-red/possibleerrors/mutexscope
+          vetgen add github.com/sapphi-red/possibleerrors/fordirection
+          vetgen add github.com/sapphi-red/possibleerrors/avoidaccesslen
+          vetgen add github.com/sapphi-red/possibleerrors/mutexscope
           go build -o ../vettool .
       - uses: reviewdog/action-setup@v1
       - name: Run reviewdog

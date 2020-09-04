@@ -7,6 +7,10 @@ jobs:
     steps:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v1
+      - name: fetch custom linter
+        command: |
+          curl -o linters.tar.gz https://github.com/sapphi-red/possibleerrors/releases/download/v0.1.11/possibleerrors_golang-ci-lint-plugin_0.1.11_linux_64bit.tar.gz
+          tar -xzf linters.tar.gz
       - name: golangci-lint
         uses: reviewdog/action-golangci-lint@v1
         with:

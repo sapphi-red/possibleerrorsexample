@@ -7,11 +7,19 @@ jobs:
     steps:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v1
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '1.15'
       - name: fetch custom linter
         run: |
-          curl -o linters.tar.gz -L https://github.com/sapphi-red/possibleerrors/releases/download/v0.1.14/possibleerrors_golang-ci-lint-plugin_0.1.14_linux_64bit.tar.gz
+          curl -o linters.tar.gz -L https://github.com/sapphi-red/possibleerrors/releases/download/v0.1.16/possibleerrors_golang-ci-lint-plugin_0.1.16_linux_64bit.tar.gz
           tar -xzf linters.tar.gz
-      - name: golangci-lint
-        uses: reviewdog/action-golangci-lint@v1
-        with:
-          reviewdog_flags: -reporter=github-pr-review
+      - name: Install golangci-lint with CGO_ENABLED=1
+        run: |
+          CGO_ENABLED=1 go install github.com/golangci/golangci-lint/cmd/golangci-lint
+      - uses: reviewdog/action-setup@v1
+      - name: Run reviewdog
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          golangci-lint run --out-format line-number | reviewdog -f=golangci-lint -reporter=github-pr-review

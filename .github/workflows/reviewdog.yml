@@ -12,7 +12,7 @@ jobs:
           go-version: '1.15'
       - name: fetch custom linter
         run: |
-          curl -o linters.tar.gz -L https://github.com/sapphi-red/possibleerrors/releases/download/v0.1.15/possibleerrors_golang-ci-lint-plugin_0.1.15_linux_64bit.tar.gz
+          curl -o linters.tar.gz -L https://github.com/sapphi-red/possibleerrors/releases/download/v0.1.16/possibleerrors_golang-ci-lint-plugin_0.1.16_linux_64bit.tar.gz
           tar -xzf linters.tar.gz
       - name: Install golangci-lint with CGO_ENABLED=1
         run: |

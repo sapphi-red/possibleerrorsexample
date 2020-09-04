@@ -1,3 +1,4 @@
 runner:
   govet:
     cmd: go vet -all .
+    level: info

@@ -21,3 +21,7 @@ func main() {
 
 	fmt.Println("unreach")
 }
+
+func f() {
+	fmt.Println("un")
+}

@@ -10,18 +10,18 @@ func main() {
 		fmt.Println(i)
 	}
 
-	slice := []string{}//
-	fmt.Println(slice[len(slice)])//
+	slice := []string{}
+	fmt.Println(slice[len(slice)])
 
-	for i := 0; i < 10; i-- {//
+	for i := 0; i < 10; i-- {
 		fmt.Println(i)
 	}
 
 	return
 
-	fmt.Println("unreach")//
+	fmt.Println("unreach")
 }
 
-func f() {//
-	fmt.Println("un")//
+func f() {
+	fmt.Println("un")
 }

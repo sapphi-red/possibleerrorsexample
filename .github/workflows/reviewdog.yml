@@ -11,7 +11,12 @@ jobs:
         run: |
           curl -o linters.tar.gz -L https://github.com/sapphi-red/possibleerrors/releases/download/v0.1.14/possibleerrors_golang-ci-lint-plugin_0.1.14_linux_64bit.tar.gz
           tar -xzf linters.tar.gz
-      - name: golangci-lint
-        uses: reviewdog/action-golangci-lint@v1
-        with:
-          reviewdog_flags: -reporter=github-pr-review
+      - name: Install golangci-lint with CGO_ENABLED=1
+        run: |
+          CGO_ENABLED=1 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.30.0
+      - uses: reviewdog/action-setup@v1
+      - name: Run reviewdog
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          golangci-lint run --out-format line-number | reviewdog -reporter=github-pr-review

@@ -9,4 +9,7 @@ func main() {
 	if true {
 		fmt.Println(i)
 	}
+
+	slice := []string{}
+	fmt.Println(slice[len(slice)])
 }

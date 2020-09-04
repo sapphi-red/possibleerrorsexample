@@ -12,3 +12,8 @@ linters-settings:
       path: ./mutexscope-golangci-lint
       description: mutexscope
       original-url: github.com/sapphi-red/possibleerrors/mutexscope
+linters:
+  enable:
+    - fordirection
+    - avoidaccesslen
+    - mutexscope

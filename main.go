@@ -12,4 +12,8 @@ func main() {
 
 	slice := []string{}
 	fmt.Println(slice[len(slice)])
+
+	for i := 0; i < 10; i-- {
+		fmt.Println(i)
+	}
 }

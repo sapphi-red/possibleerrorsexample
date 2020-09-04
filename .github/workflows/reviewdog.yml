@@ -22,4 +22,4 @@ jobs:
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          golangci-lint run --out-format line-number | reviewdog -reporter=github-pr-review
+          golangci-lint run --out-format line-number | reviewdog -f=golangci-lint -reporter=github-pr-review

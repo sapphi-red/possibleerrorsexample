@@ -3,6 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("hello")
-	fmt.Println("hello")
+	i := 0
+	i = 2
+	i = 4
+	if true {
+		fmt.Println(i)
+	}
 }

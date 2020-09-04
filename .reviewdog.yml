@@ -4,4 +4,4 @@ runner:
     errorformat:
       - "%f:%l: %m"
       - "%-G%.%#"
-    level: info
+    level: error

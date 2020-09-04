@@ -17,6 +17,9 @@ func main() {
 		fmt.Println(i)
 	}
 
+	slice2 := []string{}
+	fmt.Println(slice2[len(slice2)])
+
 	return
 
 	fmt.Println("unreach")

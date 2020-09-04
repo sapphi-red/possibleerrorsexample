@@ -13,7 +13,7 @@ jobs:
           tar -xzf linters.tar.gz
       - name: Install golangci-lint with CGO_ENABLED=1
         run: |
-          CGO_ENABLED=1 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.30.0
+          CGO_ENABLED=1 go install github.com/golangci/golangci-lint/cmd/golangci-lint
       - uses: reviewdog/action-setup@v1
       - name: Run reviewdog
         env:

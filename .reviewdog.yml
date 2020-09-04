@@ -1,4 +1,0 @@
-runner:
-  govet:
-    cmd: go vet -vettool=$(which _vettool) ./...
-    format: govet

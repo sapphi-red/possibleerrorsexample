@@ -1,3 +1,7 @@
 runner:
   govet:
-    cmd: go vet -vettool=./vettool .
+    cmd: go vet -vettool=$(which _vettool) ./...
+    errorformat:
+      - "%f:%l: %m"
+      - "%-G%.%#"
+    level: info

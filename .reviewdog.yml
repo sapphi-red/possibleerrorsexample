@@ -1,7 +1,0 @@
-runner:
-  govet:
-    cmd: go vet -all .
-    errorformat:
-      - "%f:%l: %m"
-      - "%-G%.%#"
-    level: info

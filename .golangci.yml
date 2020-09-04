@@ -1,0 +1,14 @@
+linters-settings:
+  custom:
+    fordirection:
+      path: ./fordirection-golangci-lint
+      description: fordirection
+      original-url: github.com/sapphi-red/possibleerrors/fordirection
+    avoidaccesslen:
+      path: ./avoidaccesslen-golangci-lint
+      description: avoidaccesslen
+      original-url: github.com/sapphi-red/possibleerrors/avoidaccesslen
+    mutexscope:
+      path: ./mutexscope-golangci-lint
+      description: mutexscope
+      original-url: github.com/sapphi-red/possibleerrors/mutexscope

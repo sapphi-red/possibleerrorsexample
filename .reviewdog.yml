@@ -1,3 +1,0 @@
-runner:
-  govet:
-    cmd: go vet -vettool=./vettool .

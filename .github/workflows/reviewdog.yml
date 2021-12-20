@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code into the Go module directory
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: fetch custom linter
         run: |
           curl -o linters.tar.gz -L https://github.com/sapphi-red/possibleerrors/releases/download/v0.1.14/possibleerrors_golang-ci-lint-plugin_0.1.14_linux_64bit.tar.gz
